@@ -1,5 +1,11 @@
 namespace ConsoleTetris;
 
+/// <summary>
+/// Tracks player statistics including total lines cleared, score, and level.
+/// Implements the classic Tetris scoring system where points scale with level
+/// and clearing multiple lines at once yields bonus points (e.g., Tetris = 4
+/// lines = 1200 * level).
+/// </summary>
 public class GameStats
 {
     private static readonly int[] LinePoints = { 0, 40, 100, 300, 1200 };

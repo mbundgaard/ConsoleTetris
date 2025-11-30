@@ -1,5 +1,10 @@
 namespace ConsoleTetris;
 
+/// <summary>
+/// Handles all console-based rendering for the game. Displays the main menu,
+/// single-player and dual-player game boards, statistics panels, next piece
+/// preview, and game over screens using ASCII art.
+/// </summary>
 public class ConsoleRenderer
 {
     private const string NormalCell = "[]";

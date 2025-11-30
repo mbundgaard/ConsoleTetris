@@ -1,5 +1,10 @@
 namespace ConsoleTetris;
 
+/// <summary>
+/// Represents a single cell on the Tetris board. A cell can be empty, occupied
+/// by a normal tetromino piece, or contain garbage (used in multiplayer mode
+/// when lines are sent to opponents).
+/// </summary>
 public struct BoardCell
 {
     public bool IsOccupied { get; init; }

@@ -1,5 +1,10 @@
 namespace ConsoleTetris;
 
+/// <summary>
+/// Orchestrates game flow: menu navigation, game mode selection, and the main game loops
+/// for single and dual player modes. Coordinates input handling, game updates, rendering,
+/// and garbage line exchange between players.
+/// </summary>
 public class GameManager
 {
     private const int FrameIntervalMs = 16;

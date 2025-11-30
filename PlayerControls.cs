@@ -1,5 +1,10 @@
 namespace ConsoleTetris;
 
+/// <summary>
+/// Defines keyboard control mappings for players. Provides preset configurations
+/// for single player (arrow keys + space), and two separate control schemes for
+/// dual player mode (WASD+1 for P1, arrows+space for P2) to allow simultaneous play.
+/// </summary>
 public class PlayerControls
 {
     public ConsoleKey Left { get; init; }

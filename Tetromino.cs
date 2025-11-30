@@ -1,10 +1,18 @@
 namespace ConsoleTetris;
 
+/// <summary>
+/// Defines the seven standard Tetris piece types: I, J, L, O, S, T, and Z.
+/// </summary>
 public enum TetrominoType
 {
     I, J, L, O, S, T, Z
 }
 
+/// <summary>
+/// Represents a Tetris piece (tetromino) with its type, position, and rotation state.
+/// Contains all rotation matrices for each piece type following the standard Tetris
+/// rotation system (SRS-like). Supports random piece generation.
+/// </summary>
 public class Tetromino
 {
     public TetrominoType Type { get; }

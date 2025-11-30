@@ -1,5 +1,10 @@
 namespace ConsoleTetris;
 
+/// <summary>
+/// Represents the Tetris game board (playfield). Manages the grid of cells where
+/// tetrominos are placed, handles collision detection, line clearing, and garbage
+/// line mechanics for multiplayer mode.
+/// </summary>
 public class Board
 {
     public const int Width = 10;

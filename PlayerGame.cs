@@ -1,5 +1,10 @@
 namespace ConsoleTetris;
 
+/// <summary>
+/// Manages the game state for a single player. Handles piece spawning, movement,
+/// rotation, soft/hard drops, gravity timing, line clearing, and garbage exchange.
+/// Each player instance maintains its own board, current/next pieces, and statistics.
+/// </summary>
 public class PlayerGame
 {
     private const int FallIntervalMs = 500;

@@ -5,7 +5,9 @@ name: Build and Release
 on:
   push:
     tags:
-      - 'v*'  # Triggers on version tags like v1.0.0
+      - 'v*'
+  workflow_dispatch:
+
 
 jobs:
   build:

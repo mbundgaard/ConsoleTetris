@@ -1,0 +1,52 @@
+# Build and release Console Tetris
+
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # Triggers on version tags like v1.0.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+
+    # Build self-contained executables for Windows, Linux, and macOS
+    - name: Build Windows
+      run: dotnet publish -c Release -r win-x64 --self-contained -o ./publish/win-x64
+
+    - name: Build Linux
+      run: dotnet publish -c Release -r linux-x64 --self-contained -o ./publish/linux-x64
+
+    - name: Build macOS
+      run: dotnet publish -c Release -r osx-x64 --self-contained -o ./publish/osx-x64
+
+    # Zip the outputs
+    - name: Zip Windows build
+      run: zip -j ./ConsoleTetris-win-x64.zip ./publish/win-x64/*
+
+    - name: Zip Linux build
+      run: zip -j ./ConsoleTetris-linux-x64.zip ./publish/linux-x64/*
+
+    - name: Zip macOS build
+      run: zip -j ./ConsoleTetris-osx-x64.zip ./publish/osx-x64/*
+
+    # Create GitHub Release
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          ConsoleTetris-win-x64.zip
+          ConsoleTetris-linux-x64.zip
+          ConsoleTetris-osx-x64.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

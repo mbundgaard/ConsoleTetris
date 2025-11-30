@@ -7,6 +7,11 @@ on:
     tags:
       - 'v*'
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g., v1.0.0)'
+        required: true
+        type: string
 
 jobs:
   build:
@@ -45,6 +50,7 @@ jobs:
     - name: Create Release
       uses: softprops/action-gh-release@v1
       with:
+        tag_name: ${{ github.ref_name || inputs.version }}
         files: |
           ConsoleTetris-win-x64.zip
           ConsoleTetris-linux-x64.zip

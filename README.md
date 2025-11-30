@@ -2,6 +2,19 @@
 
 A classic Tetris clone built in C# for the console, featuring single and dual player modes with garbage line attacks.
 
+## Inspiration
+
+This project recreates the look and feel of the original Tetris from 1984, developed by Alexey Pajitnov on the Electronika 60.
+
+<p align="center">
+  <img src="https://tetris.wiki/images/1/1d/Tetris_E60_title.png" alt="Original Tetris title screen on Electronika 60" width="400"/>
+  <img src="https://tetris.wiki/images/e/e9/Tetris_E60_ingame.png" alt="Original Tetris gameplay on Electronika 60" width="400"/>
+</p>
+
+*The original Tetris on Electronika 60 (1984) - Title screen and gameplay*
+
+Learn more: [Tetris (Electronika 60) - TetrisWiki](https://tetris.wiki/Tetris_(Electronika_60))
+
 ## Features
 
 - Single Player and Dual Player modes
